@@ -1,0 +1,2304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laura Jewelry Co. | Handcrafted Luxury Jewelry</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #f0e6d6;
+            --secondary-color: #d4c9b8;
+            --accent-color: #b8a07d;
+            --dark-color: #3a3226;
+            --light-color: #f9f7f3;
+            --text-color: #333;
+            --text-light: #777;
+            --font-serif: 'Playfair Display', serif;
+            --font-sans: 'Lato', sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-sans);
+            color: var(--text-color);
+            background-color: var(--light-color);
+            line-height: 1.6;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: var(--font-serif);
+            font-weight: 600;
+            color: var(--dark-color);
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 24px;
+            background-color: var(--accent-color);
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-family: var(--font-sans);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: var(--dark-color);
+            transform: translateY(-2px);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid var(--accent-color);
+            color: var(--accent-color);
+        }
+
+        .btn-outline:hover {
+            background-color: var(--accent-color);
+            color: white;
+        }
+
+        /* Header */
+        header {
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+
+        .logo {
+            font-family: var(--font-serif);
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--dark-color);
+        }
+
+        .logo span {
+            color: var(--accent-color);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 14px;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        nav a.active {
+            color: var(--accent-color);
+        }
+
+        nav a.active::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: var(--accent-color);
+        }
+
+        nav a:hover {
+            color: var(--accent-color);
+        }
+
+        .cart-icon {
+            position: relative;
+            cursor: pointer;
+        }
+
+        .cart-count {
+            position: absolute;
+            top: -8px;
+            right: -8px;
+            background-color: var(--accent-color);
+            color: white;
+            border-radius: 50%;
+            width: 18px;
+            height: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 10px;
+            font-weight: 700;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 90vh;
+            min-height: 600px;
+            background-image: url('https://images.unsplash.com/photo-1605100804763-247f67b3557e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            position: relative;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to right, rgba(0,0,0,0.5), rgba(0,0,0,0.2));
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            color: white;
+            max-width: 600px;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            color: white;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            max-width: 500px;
+        }
+
+        /* Featured Section */
+        .section-padding {
+            padding: 100px 0;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            margin-bottom: 50px;
+            position: relative;
+            display: inline-block;
+            text-align: center;
+            width: 100%;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background-color: var(--accent-color);
+        }
+
+        /* Products Grid */
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 40px;
+            margin-top: 60px;
+        }
+
+        .product-card {
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+        }
+
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .product-badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background-color: var(--accent-color);
+            color: white;
+            padding: 5px 10px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: 700;
+            z-index: 1;
+        }
+
+        .product-image {
+            height: 300px;
+            background-color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--dark-color);
+            font-size: 18px;
+            overflow: hidden;
+        }
+
+        .product-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .product-info {
+            padding: 25px;
+        }
+
+        .product-title {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+
+        .product-description {
+            font-size: 14px;
+            color: var(--text-light);
+            margin-bottom: 15px;
+            min-height: 60px;
+        }
+
+        .product-price {
+            font-weight: 700;
+            color: var(--accent-color);
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+        }
+
+        /* About Page */
+        .about-section {
+            background-color: white;
+            padding: 100px 0;
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .about-image {
+            height: 500px;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .about-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .about-text h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .about-text p {
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        .signature {
+            font-family: var(--font-serif);
+            font-size: 1.5rem;
+            margin-top: 30px;
+            color: var(--accent-color);
+        }
+
+        /* Owner Section */
+        .owner-section {
+            padding: 100px 0;
+            background-color: var(--light-color);
+        }
+
+        .owner-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .owner-image {
+            height: 500px;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .owner-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .owner-content h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .owner-content h3 {
+            font-size: 1.2rem;
+            color: var(--accent-color);
+            margin-bottom: 20px;
+            font-weight: 500;
+        }
+
+        .owner-content p {
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: var(--accent-color);
+            color: white;
+            border-radius: 50%;
+            transition: all 0.3s ease;
+        }
+
+        .social-links a:hover {
+            background-color: var(--dark-color);
+            transform: translateY(-3px);
+        }
+
+        /* Contact Page */
+        .contact-section {
+            padding: 100px 0;
+            background-color: white;
+        }
+
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 50px;
+            border-radius: 8px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: 700;
+            font-size: 1rem;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-family: var(--font-sans);
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            border-color: var(--accent-color);
+            outline: none;
+        }
+
+        .form-group textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--dark-color);
+            color: white;
+            padding: 80px 0 30px;
+        }
+
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 50px;
+            margin-bottom: 60px;
+        }
+
+        .footer-logo {
+            font-family: var(--font-serif);
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: white;
+        }
+
+        .footer-logo span {
+            color: var(--primary-color);
+        }
+
+        .footer-about p {
+            margin-bottom: 20px;
+            color: rgba(255, 255, 255, 0.7);
+            line-height: 1.8;
+        }
+
+        .footer-social-links {
+            display: flex;
+            gap: 15px;
+        }
+
+        .footer-social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            transition: all 0.3s ease;
+        }
+
+        .footer-social-links a:hover {
+            background-color: var(--primary-color);
+            color: var(--dark-color);
+        }
+
+        .footer-links h3 {
+            font-size: 1.2rem;
+            margin-bottom: 25px;
+            color: white;
+        }
+
+        .footer-links ul li {
+            margin-bottom: 12px;
+        }
+
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.7);
+            transition: color 0.3s ease;
+            font-size: 0.95rem;
+        }
+
+        .footer-links a:hover {
+            color: var(--primary-color);
+        }
+
+        .footer-contact p {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 18px;
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.95rem;
+        }
+
+        .footer-contact i {
+            width: 20px;
+            text-align: center;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 40px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 0.9rem;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 1200px) {
+            .hero h1 {
+                font-size: 3rem;
+            }
+        }
+
+        @media (max-width: 992px) {
+            .about-content,
+            .owner-container {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .about-image,
+            .owner-image {
+                height: 400px;
+                order: -1;
+            }
+
+            .section-padding {
+                padding: 80px 0;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero {
+                height: 80vh;
+                min-height: 500px;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            nav {
+                position: fixed;
+                top: 80px;
+                left: 0;
+                width: 100%;
+                background-color: white;
+                padding: 20px;
+                box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+                transform: translateY(-150%);
+                transition: transform 0.3s ease;
+            }
+
+            nav.active {
+                transform: translateY(0);
+            }
+
+            nav ul {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .products-grid {
+                gap: 30px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .hero {
+                height: 70vh;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .section-padding {
+                padding: 60px 0;
+            }
+
+            .contact-form {
+                padding: 30px;
+            }
+
+            .footer-container {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+        }
+
+        /* ------------------------- */
+        /* NEW CART & CHECKOUT STYLES */
+        /* ------------------------- */
+
+        /* Cart Sidebar */
+        .cart-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.5);
+            z-index: 999;
+            display: none;
+        }
+
+        .cart-overlay.active {
+            display: block;
+        }
+
+        .cart-sidebar {
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: 100%;
+            max-width: 450px;
+            height: 100vh;
+            background-color: white;
+            box-shadow: -5px 0 15px rgba(0,0,0,0.1);
+            z-index: 1000;
+            transform: translateX(100%);
+            transition: transform 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .cart-sidebar.active {
+            transform: translateX(0);
+        }
+
+        .cart-header {
+            padding: 20px;
+            border-bottom: 1px solid #eee;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .cart-title {
+            font-size: 1.5rem;
+            margin: 0;
+        }
+
+        .close-cart {
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--text-light);
+        }
+
+        .cart-body {
+            padding: 20px;
+            flex: 1;
+            overflow-y: auto;
+        }
+
+        .cart-empty {
+            text-align: center;
+            padding: 40px 0;
+        }
+
+        .cart-empty p {
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+            color: var(--text-light);
+        }
+
+        .cart-item {
+            display: grid;
+            grid-template-columns: 80px 1fr auto;
+            gap: 15px;
+            padding: 15px 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .cart-item:last-child {
+            border-bottom: none;
+        }
+
+        .cart-item-image {
+            width: 80px;
+            height: 80px;
+            background-color: var(--primary-color);
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .cart-item-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .cart-item-details h3 {
+            font-size: 1rem;
+            margin-bottom: 5px;
+        }
+
+        .cart-item-price {
+            font-weight: 700;
+            color: var(--accent-color);
+            margin-bottom: 10px;
+            font-size: 0.9rem;
+        }
+
+        .cart-item-quantity {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .quantity-btn {
+            width: 25px;
+            height: 25px;
+            background-color: #f5f5f5;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .cart-item-remove {
+            color: var(--text-light);
+            font-size: 12px;
+            cursor: pointer;
+            transition: color 0.3s ease;
+            display: inline-block;
+            margin-top: 5px;
+        }
+
+        .cart-item-remove:hover {
+            color: var(--accent-color);
+        }
+
+        .cart-footer {
+            padding: 20px;
+            border-top: 1px solid #eee;
+        }
+
+        .cart-summary {
+            margin-bottom: 20px;
+        }
+
+        .summary-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+
+        .summary-total {
+            font-weight: 700;
+            font-size: 1.1rem;
+            border-top: 1px solid #eee;
+            padding-top: 10px;
+            margin-top: 10px;
+        }
+
+        /* Checkout Page */
+        .checkout-page {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background-color: white;
+            z-index: 1001;
+            overflow-y: auto;
+            display: none;
+        }
+
+        .checkout-page.active {
+            display: block;
+        }
+
+        .checkout-header {
+            padding: 20px;
+            border-bottom: 1px solid #eee;
+            position: relative;
+            text-align: center;
+        }
+
+        .checkout-title {
+            font-size: 1.5rem;
+            margin: 0;
+        }
+
+        .back-to-cart {
+            position: absolute;
+            left: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: none;
+            border: none;
+            font-size: 1rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            color: var(--accent-color);
+        }
+
+        .checkout-steps {
+            display: flex;
+            justify-content: center;
+            margin-top: 15px;
+        }
+
+        .step {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 0 15px;
+        }
+
+        .step-number {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background-color: #eee;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 5px;
+            font-size: 0.9rem;
+        }
+
+        .step.active .step-number {
+            background-color: var(--accent-color);
+            color: white;
+        }
+
+        .step-label {
+            font-size: 0.8rem;
+            color: var(--text-light);
+        }
+
+        .step.active .step-label {
+            color: var(--accent-color);
+            font-weight: bold;
+        }
+
+        .checkout-body {
+            padding: 20px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .checkout-section {
+            margin-bottom: 30px;
+            display: none;
+        }
+
+        .checkout-section.active {
+            display: block;
+        }
+
+        .section-title {
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+            color: var(--dark-color);
+        }
+
+        .checkout-form {
+            display: grid;
+            gap: 15px;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-family: var(--font-sans);
+            font-size: 1rem;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus {
+            border-color: var(--accent-color);
+            outline: none;
+        }
+
+        .full-width {
+            grid-column: span 2;
+        }
+
+        .checkout-summary {
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+
+        .checkout-items {
+            max-height: 300px;
+            overflow-y: auto;
+            margin-bottom: 15px;
+        }
+
+        .checkout-item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 15px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .checkout-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .checkout-item-info {
+            display: flex;
+            gap: 15px;
+        }
+
+        .checkout-item-image {
+            width: 60px;
+            height: 60px;
+            background-color: var(--primary-color);
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .checkout-item-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .checkout-item-details h4 {
+            font-size: 0.9rem;
+            margin-bottom: 5px;
+        }
+
+        .checkout-item-details p {
+            font-size: 0.8rem;
+            color: var(--text-light);
+        }
+
+        .checkout-item-price {
+            font-weight: 700;
+            color: var(--accent-color);
+            font-size: 0.9rem;
+        }
+
+        .summary-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+
+        .summary-total {
+            font-weight: bold;
+            border-top: 1px solid #eee;
+            padding-top: 10px;
+            margin-top: 10px;
+        }
+
+        .checkout-footer {
+            padding: 20px;
+            border-top: 1px solid #eee;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .btn-back {
+            background-color: #f5f5f5;
+            color: var(--text-color);
+            border: none;
+            padding: 12px 24px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .btn-next {
+            background-color: var(--accent-color);
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: 700;
+        }
+
+        /* Success Page */
+        .success-page {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background-color: white;
+            z-index: 1002;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .success-page.active {
+            display: flex;
+        }
+
+        .success-content {
+            max-width: 500px;
+            padding: 40px;
+        }
+
+        .success-icon {
+            font-size: 4rem;
+            color: var(--accent-color);
+            margin-bottom: 20px;
+        }
+
+        .success-title {
+            font-size: 2rem;
+            margin-bottom: 15px;
+        }
+
+        .success-message {
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+            color: var(--text-light);
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .cart-sidebar {
+                max-width: 100%;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+
+            .full-width {
+                grid-column: span 1;
+            }
+
+            .checkout-header {
+                padding: 15px;
+            }
+
+            .back-to-cart {
+                position: static;
+                transform: none;
+                margin-bottom: 10px;
+                justify-content: center;
+            }
+
+            .checkout-title {
+                margin-bottom: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <a href="#home" class="logo">Laura<span>Jewelry</span>Co.</a>
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+            <nav id="mainNav">
+                <ul>
+                    <li><a href="#home" class="nav-link active" data-page="home">Home</a></li>
+                    <li><a href="#about" class="nav-link" data-page="about">About</a></li>
+                    <li><a href="#owner" class="nav-link" data-page="owner">The Maker</a></li>
+                    <li><a href="#shop" class="nav-link" data-page="shop">Shop</a></li>
+                    <li><a href="#contact" class="nav-link" data-page="contact">Contact</a></li>
+                    <li>
+                        <a href="#" class="cart-icon" id="cartButton">
+                            <i class="fas fa-shopping-bag"></i>
+                            <span class="cart-count" id="cartCount">0</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Home Page -->
+        <section id="home-page" class="page active">
+            <section class="hero">
+                <div class="container">
+                    <div class="hero-content">
+                        <h1>Handcrafted Jewelry with Soul & Story</h1>
+                        <p>Each piece tells a story of heritage, strength, and individuality. Discover our collection of timeless designs crafted with intention.</p>
+                        <a href="#shop" class="btn">Explore Collection</a>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section-padding">
+                <div class="container">
+                    <h2 class="section-title">Featured Collection</h2>
+                    <div class="products-grid">
+                        <div class="product-card">
+                            <div class="product-badge">Bestseller</div>
+                            <div class="product-image">
+                                <img src="https://princessbridediamonds.com/cdn/shop/products/2-tone-diamond-heart-bracelet-bracelets-princess-bride-diamonds-545640.jpg?v=1677955932&width=410">
+                            </div>
+                            <div class="product-info">
+                                <h3 class="product-title">Diamond Heart Bracelet</h3>
+                                <p class="product-description">2-Tone Diamond Heart Bracelet</p>
+                                <p class="product-price">$1,750</p>
+                                <button class="btn btn-outline add-to-cart" data-id="1" data-name="Diamond Heart Bracelet" data-price="1750" data-image="https://princessbridediamonds.com/cdn/shop/products/2-tone-diamond-heart-bracelet-bracelets-princess-bride-diamonds-545640.jpg?v=1677955932&width=410">Add to Cart</button>
+                            </div>
+                        </div>
+                        <div class="product-card">
+                            <div class="product-badge">New</div>
+                            <div class="product-image">
+                                <img src="https://princessbridediamonds.com/cdn/shop/files/four-row-diamonds-pave-choker-necklaces-princess-bride-diamonds-754611.jpg?v=1741994187&width=410" alt="Celeste Pendant">
+                            </div>
+                            <div class="product-info">
+                                <h3 class="product-title">Four Row Diamonds Pavé Choker</h3>
+                                <p class="product-description">14K White Gold | 1.56cttw of Diamonds G+, SI+ | Stone Type - Natural Diamond </p>
+                                <p class="product-price">$4,360</p>
+                                <button class="btn btn-outline add-to-cart" data-id="2" data-name="Four Row Diamonds Pavé Choker" data-price="4360" data-image="https://princessbridediamonds.com/cdn/shop/files/four-row-diamonds-pave-choker-necklaces-princess-bride-diamonds-754611.jpg?v=1741994187&width=410">Add to Cart</button>
+                            </div>
+                        </div>
+                        <div class="product-card">
+                            <div class="product-image">
+                                <img src="https://princessbridediamonds.com/cdn/shop/files/35mm-north-south-emerald-diamond-ring-rings-princess-bride-diamonds-569739.jpg?v=1740598078&width=410" alt="Eden Stack Rings">
+                            </div>
+                            <div class="product-info">
+                                <h3 class="product-title">3.5mm North-South Emerald Diamond Ring</h3>
+                                <p class="product-description">14k Yellow, White, or Rose Gold; 18k Yellow or White Gold</p>
+                                <p class="product-price">$2,299</p>
+                                <button class="btn btn-outline add-to-cart" data-id="3" data-name="3.5mm North-South Emerald Diamond Ring" data-price="2299" data-image="https://princessbridediamonds.com/cdn/shop/files/35mm-north-south-emerald-diamond-ring-rings-princess-bride-diamonds-569739.jpg?v=1740598078&width=410">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </section>
+
+        <!-- About Page -->
+        <section id="about-page" class="page">
+            <section class="about-section">
+                <div class="container">
+                    <div class="about-content">
+                        <div class="about-image">
+                            <img src="https://images.squarespace-cdn.com/content/v1/5f762f8877e84721d55ce794/1684990917724-4PJO90C6G82ONNK26H1T/IMG_6383.jpeg" alt="Laura Jewelry Studio">
+                        </div>
+                        <div class="about-text">
+                            <h2>Our Story</h2>
+                            <p>Laura's creations are more than just adornments — they're wearable expressions of heritage, strength, and individuality. Inspired by timeless metals and soulful stones, every piece is handcrafted with intention.</p>
+                            <p>Founded in 2015, Laura Jewelry Co. began as a small studio in Portland, Oregon. What started as a passion project has grown into a celebrated brand known for its earthy luxury and poetic edge.</p>
+                            <p>Each jewelry piece is thoughtfully designed and meticulously crafted in our studio, using ethically sourced materials and traditional techniques passed down through generations of artisans.</p>
+                            <div class="signature">Laura Bennett</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </section>
+
+        <!-- Owner Page -->
+        <section id="owner-page" class="page">
+            <section class="owner-section">
+                <div class="container">
+                    <div class="owner-container">
+                        <div class="owner-image">
+                            <img src="https://pbs.twimg.com/media/Gqh1tQ3bcAMKq8t?format=png&name=small" alt="Laura Bennett, Founder">
+                        </div>
+                        <div class="owner-content">
+                            <h2>Laura Bennett</h2>
+                            <h3>Founder & Lead Artisan</h3>
+                            <p>With a background in fine arts and metalworking, Laura brings a unique perspective to jewelry design. Her journey began at the age of 15 when she inherited her father's jewelry tools and began experimenting with metals and stones, I grew around my dad making jewelries all my life hence the passion.</p>
+                            <p>After graduating from the Rhode Island School of Design, Laura traveled the world studying traditional jewelry-making techniques from master craftsmen in Italy, India, and Japan. These diverse influences are evident in her work, which blends contemporary aesthetics with time-honored craftsmanship.</p>
+                            <p>When not in the studio, Laura can be found hiking in the Pacific Northwest, collecting rare stones, or teaching jewelry-making workshops to aspiring artisans.</p>
+                            <div class="social-links">
+                                <a href="https://www.linkedin.com/in/laura-bennett-228505361/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                                <a href="#"><i class="fab fa-pinterest"></i></a>
+                                <a href="#"><i class="far fa-envelope"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </section>
+
+        <!-- Shop Page -->
+        <section id="shop-page" class="page">
+            <section class="section-padding">
+                <div class="container">
+                    <h2 class="section-title">The Collection</h2>
+                    <div class="products-grid">
+                        <div class="product-card">
+                            <div class="product-badge">Bestseller</div>
+                            <div class="product-image">
+                                <img src="https://princessbridediamonds.com/cdn/shop/files/240ct-d-vs1-round-lab-diamond-caraline-studs-white-gold-earrings-princess-bride-diamonds-324671.gif?v=1723901872&width=410" alt="Luna Drop Earrings">
+                            </div>
+                            <div class="product-info">
+                                <h3 class="product-title">Round Lab Diamond Caraline Studs White Gold</h3>
+                                <p class="product-description">2.40ct D-VS1 | 14kt white gold</p>
+                                <p class="product-price">$2,999</p>
+                                <button class="btn btn-outline add-to-cart" data-id="4" data-name="Round Lab Diamond Caraline Studs White Gold" data-price="2999" data-image="https://princessbridediamonds.com/cdn/shop/files/240ct-d-vs1-round-lab-diamond-caraline-studs-white-gold-earrings-princess-bride-diamonds-324671.gif?v=1723901872&width=410">Add to Cart</button>
+                            </div>
+                        </div>
+                        <div class="product-card">
+                            <div class="product-badge">New</div>
+                            <div class="product-image">
+                                <img src="https://princessbridediamonds.com/cdn/shop/files/marquise-drop-hoops-earrings-princess-bride-diamonds-14k-white-gold-850580.jpg?v=1742019655&width=410" alt="Celeste Pendant">
+                            </div>
+                            <div class="product-info">
+                                <h3 class="product-title">Marquise Drop Hoops</h3>
+                                <p class="product-description">Solid 14k gold (available in yellow, rose, or white gold) | Estimated 0.30ct total weight of natural round diamonds (F+ color, VS+ clarity)</p>
+                                <p class="product-price">$2,780</p>
+                                <button class="btn btn-outline add-to-cart" data-id="5" data-name="Marquise Drop Hoops" data-price="2780" data-image="https://princessbridediamonds.com/cdn/shop/files/marquise-drop-hoops-earrings-princess-bride-diamonds-14k-white-gold-850580.jpg?v=1742019655&width=410">Add to Cart</button>
+                            </div>
+                        </div>
+                        <div class="product-card">
+                            <div class="product-image">
+                                <img src="https://princessbridediamonds.com/cdn/shop/files/302ct-e-vs1-pear-lab-diamond-kayla-engagement-rings-princess-bride-diamonds-228760.jpg?v=1742081314&width=410" alt="Eden Stack Rings">
+                            </div>
+                            <div class="product-info">
+                                <h3 class="product-title">Pear Diamond Kayla</h3>
+                                <p class="product-description">14K White Gold | 3.02ct Pear E VS1 Diamond</p>
+                                <p class="product-price">$4,349</p>
+                                <button class="btn btn-outline add-to-cart" data-id="6" data-name="Pear Diamond Kayla" data-price="4349" data-image="https://princessbridediamonds.com/cdn/shop/files/302ct-e-vs1-pear-lab-diamond-kayla-engagement-rings-princess-bride-diamonds-228760.jpg?v=1742081314&width=410">Add to Cart</button>
+                            </div>
+                        </div>
+                        <div class="product-card">
+                            <div class="product-image">
+                                <img src="https://princessbridediamonds.com/cdn/shop/files/preview_images/f10d7858464d4fe8aeee6465ce62fe66.thumbnail.0000000000.jpg?v=1745948008&width=410" alt="Nova Cuff">
+                            </div>
+                            <div class="product-info">
+                                <h3 class="product-title">Nova Cuff</h3>
+                                <p class="product-description">3.58ct D-VS1 Round Diamond Kayla</p>
+                                <p class="product-price">$5,878</p>
+                                <button class="btn btn-outline add-to-cart" data-id="7" data-name="Nova Cuff" data-price="5878" data-image="https://princessbridediamonds.com/cdn/shop/files/preview_images/f10d7858464d4fe8aeee6465ce62fe66.thumbnail.0000000000.jpg?v=1745948008&width=410">Add to Cart</button>
+                            </div>
+                        </div>
+                        <div class="product-card">
+                            <div class="product-image">
+                                <img src="https://princessbridediamonds.com/cdn/shop/files/14k-yellow-gold-cuban-pave-bracelet-bracelets-princess-bride-diamonds-811267.jpg?v=1710280219&width=410" alt="Aria Threaders">
+                            </div>
+                            <div class="product-info">
+                                <h3 class="product-title">Cuban Pavé Bracelet</h3>
+                                <p class="product-description">14k Yellow Gold Cuban Pavé Bracelet</p>
+                                <p class="product-price">$4,840</p>
+                                <button class="btn btn-outline add-to-cart" data-id="8" data-name="Cuban Pavé Bracelet" data-price="4840" data-image="https://princessbridediamonds.com/cdn/shop/files/14k-yellow-gold-cuban-pave-bracelet-bracelets-princess-bride-diamonds-811267.jpg?v=1710280219&width=410">Add to Cart</button>
+                            </div>
+                        </div>
+                        <div class="product-card">
+                            <div class="product-image">
+                                <img src="https://princessbridediamonds.com/cdn/shop/files/436ct-pave-cuban-bracelet-bracelets-princess-bride-diamonds-907463.jpg?v=1742070572&width=410" alt="Gaia Choker">
+                            </div>
+                            <div class="product-info">
+                                <h3 class="product-title">Pavé Cuban Bracelet</h3>
+                                <p class="product-description">4.36ct Pavé Cuban Bracelet</p>
+                                <p class="product-price">$8,850</p>
+                                <button class="btn btn-outline add-to-cart" data-id="9" data-name="Pavé Cuban Bracelet" data-price="8850" data-image="https://princessbridediamonds.com/cdn/shop/files/436ct-pave-cuban-bracelet-bracelets-princess-bride-diamonds-907463.jpg?v=1742070572&width=410">Add to Cart</button>
+                            </div>
+                        </div>
+                        <div class="product-card">
+                            <div class="product-image">
+                                <img src="https://princessbridediamonds.com/cdn/shop/files/40mm-four-row-pave-ring-rings-princess-bride-diamonds-782258.jpg?v=1741994269&width=410" alt="Sierra Hoops">
+                            </div>
+                            <div class="product-info">
+                                <h3 class="product-title">4.0mm Four Row Pavé Ring</h3>
+                                <p class="product-description">194 Round Diamonds 0.60cttw Natural, F+, SI+ | 14K White Gold</p>
+                                <p class="product-price">$2,299</p>
+                                <button class="btn btn-outline add-to-cart" data-id="10" data-name="4.0mm Four Row Pavé Ring" data-price="2299" data-image="https://princessbridediamonds.com/cdn/shop/files/40mm-four-row-pave-ring-rings-princess-bride-diamonds-782258.jpg?v=1741994269&width=410">Add to Cart</button>
+                            </div>
+                        </div>
+                        <div class="product-card">
+                            <div class="product-image">
+                                <img src="https://princessbridediamonds.com/cdn/shop/files/40mm-round-lab-diamond-ring-rings-princess-bride-diamonds-411241.jpg?v=1742095579&width=410" alt="Muse Charm Bracelet">
+                            </div>
+                            <div class="product-info">
+                                <h3 class="product-title">7 Stone Double Floating Diamond Ring</h3>
+                                <p class="product-description">1.69cttw | Solid 14k yellow gold</p>
+                                <p class="product-price">$2,499</p>
+                                <button class="btn btn-outline add-to-cart" data-id="11" data-name="7 Stone Double Floating Diamond Ring" data-price="2499" data-image="https://princessbridediamonds.com/cdn/shop/files/40mm-round-lab-diamond-ring-rings-princess-bride-diamonds-411241.jpg?v=1742095579&width=410">Add to Cart</button>
+                            </div>
+                        </div>
+                        <div class="product-card">
+                            <div class="product-image">
+                                <img src="https://princessbridediamonds.com/cdn/shop/files/5mm-pave-cuban-link-ring-rings-princess-bride-diamonds-804088.jpg?v=1743718957&width=410" alt="Kora Anklet">
+                            </div>
+                            <div class="product-info">
+                                <h3 class="product-title">5mm Pavé Cuban Link Ring</h3>
+                                <p class="product-description">120 Round Diamonds 0.63cttw Natural, F+, SI+ | 14K Yellow Gold</p>
+                                <p class="product-price">$1,399</p>
+                                <button class="btn btn-outline add-to-cart" data-id="12" data-name="5mm Pavé Cuban Link Ring" data-price="1399" data-image="https://princessbridediamonds.com/cdn/shop/files/5mm-pave-cuban-link-ring-rings-princess-bride-diamonds-804088.jpg?v=1743718957&width=410">Add to Cart</button>
+                            </div>
+                        </div>
+                        <div class="product-card">
+                            <div class="product-image">
+                                <img src="https://princessbridediamonds.com/cdn/shop/files/big-pear-lab-diamond-tennis-necklace-necklaces-princess-bride-diamonds-656811.jpg?v=1745533162&width=410" alt="Aura Studs">
+                            </div>
+                            <div class="product-info">
+                                <h3 class="product-title">Big Pear Diamond Tennis Necklace</h3>
+                                <p class="product-description">18k Yellow Gold | Minimum 7.00ct Pear Diamond (E Color, VS1 Clarity) | Minimum 15.00ct Round Diamonds (F+ Color, VS1+ Clarity)</p>
+                                <p class="product-price">$18,995</p>
+                                <button class="btn btn-outline add-to-cart" data-id="13" data-name="Big Pear Diamond Tennis Necklace" data-price="18995" data-image="https://princessbridediamonds.com/cdn/shop/files/big-pear-lab-diamond-tennis-necklace-necklaces-princess-bride-diamonds-656811.jpg?v=1745533162&width=410">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </section>
+
+        <!-- Contact Page -->
+        <section id="contact-page" class="page">
+            <section class="contact-section">
+                <div class="container">
+                    <h2 class="section-title">Contact Us</h2>
+                    <div class="contact-form">
+                        <form id="contactForm">
+                            <div class="form-group">
+                                <label for="name">Your Name</label>
+                                <input type="text" id="name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email Address</label>
+                                <input type="email" id="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="message">Message</label>
+                                <textarea id="message" required></textarea>
+                            </div>
+                            <button type="submit" class="btn">Send Message</button>
+                        </form>
+                    </div>
+                </div>
+            </section>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-about">
+                    <div class="footer-logo">Laura<span>Jewelry</span>Co.</div>
+                    <p>Handcrafted jewelry blending contemporary aesthetics with artisanal craftsmanship. Each piece tells a story.</p>
+                    <div class="footer-social-links">
+                        <a href="https://www.linkedin.com/in/laura-bennett-228505361/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-pinterest"></i></a>
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">Our Story</a></li>
+                        <li><a href="#owner">The Maker</a></li>
+                        <li><a href="#shop">Shop</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h3>Customer Service</h3>
+                    <ul>
+                        <li><a href="#">Shipping Policy</a></li>
+                        <li><a href="#">Return Policy</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h3>Contact Us</h3>
+                    <p><i class="fas fa-envelope"></i> laurajewelryco@artlover.com</p>
+                    <p><i class="fas fa-phone"></i> (323) 271-0798</p>
+                    <p><i class="fas fa-map-marker-alt"></i> 1646 Williams Hwy, Grants Pass, OR 97527</p>
+                    <p><i class="fas fa-clock"></i> Mon-Fri: 10am-5pm PST</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Laura Jewelry Co. All rights reserved. Handcrafted with love in Grants Pass, Oregon.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Cart Sidebar -->
+    <div class="cart-overlay" id="cartOverlay"></div>
+    <div class="cart-sidebar" id="cartSidebar">
+        <div class="cart-header">
+            <h3 class="cart-title">Your Cart</h3>
+            <button class="close-cart" id="closeCart"><i class="fas fa-times"></i></button>
+        </div>
+        <div class="cart-body" id="cartBody">
+            <!-- Cart items will be loaded here -->
+        </div>
+        <div class="cart-footer">
+            <div class="cart-summary">
+                <div class="summary-row">
+                    <span>Subtotal</span>
+                    <span id="cartSubtotal">$0.00</span>
+                </div>
+                <div class="summary-row">
+                    <span>Shipping</span>
+                    <span id="cartShipping">Calculated at checkout</span>
+                </div>
+                <div class="summary-row summary-total">
+                    <span>Total</span>
+                    <span id="cartTotal">$0.00</span>
+                </div>
+            </div>
+            <button class="btn" id="checkoutButton" style="width: 100%;">Proceed to Checkout</button>
+        </div>
+    </div>
+
+    <!-- Checkout Page -->
+    <div class="checkout-page" id="checkoutPage">
+        <div class="checkout-header">
+            <button class="back-to-cart" id="backToCart"><i class="fas fa-arrow-left"></i> Back to cart</button>
+            <h2 class="checkout-title">Checkout</h2>
+            <div class="checkout-steps">
+                <div class="step active" data-step="1">
+                    <div class="step-number">1</div>
+                    <div class="step-label">Information</div>
+                </div>
+                <div class="step" data-step="2">
+                    <div class="step-number">2</div>
+                    <div class="step-label">Shipping</div>
+                </div>
+                <div class="step" data-step="3">
+                    <div class="step-number">3</div>
+                    <div class="step-label">Payment</div>
+                </div>
+            </div>
+        </div>
+        <div class="checkout-body">
+            <!-- Step 1: Customer Information -->
+            <div class="checkout-section active" data-step="1">
+                <h3 class="section-title">Contact Information</h3>
+                <div class="checkout-form">
+                    <div class="form-group full-width">
+                        <label for="checkout-email">Email Address</label>
+                        <input type="email" id="checkout-email" required>
+                    </div>
+                    <div class="form-group full-width">
+                        <label>
+                            <input type="checkbox" id="emailUpdates">
+                            Email me with news and offers
+                        </label>
+                    </div>
+                </div>
+
+                <h3 class="section-title">Shipping Address</h3>
+                <div class="checkout-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="first-name">First Name</label>
+                            <input type="text" id="first-name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="last-name">Last Name</label>
+                            <input type="text" id="last-name" required>
+                        </div>
+                    </div>
+                    <div class="form-group full-width">
+                        <label for="address">Address</label>
+                        <input type="text" id="address" required>
+                    </div>
+                    <div class="form-group full-width">
+                        <label for="apartment">Apartment, suite, etc. (optional)</label>
+                        <input type="text" id="apartment">
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="city">City</label>
+                            <input type="text" id="city" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="country">Country</label>
+                            <select id="country" required>
+                                <option value="">Select country</option>
+                                <option value="US">United States</option>
+                                <option value="CA">Canada</option>
+                                <option value="UK">United Kingdom</option>
+                                <!-- Add more countries as needed -->
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="state">State</label>
+                            <select id="state" required>
+                                <option value="">Select state</option>
+                                <option value="AL">Alabama</option>
+                                <option value="AK">Alaska</option>
+                                <option value="AR">Arkansas</option>
+                                <option value="AZ">Arizona</option>
+                                <option value="CA">California</option>
+                                <option value="CO">Colorado</option>
+                                <option value="CT">Connecticut</option>
+                                <option value="DE">Delaware</option>
+                                <option value="FL">Florida</option>
+                                <option value="GA">Georgia</option>
+                                <option value="HI">Hawaii</option>
+                                <option value="ID">Idaho</option>
+                                <option value="IL">Illinois</option>
+                                <option value="IN">Indiana</option>
+                                <option value="IA">Iowa</option>
+                                <option value="KS">Kansas</option>
+                                <option value="KY">Kentucky</option>
+                                <option value="LA">Louisiana</option>
+                                <option value="ME">Maine</option>
+                                <option value="MD">Maryland</option>
+                                <option value="MA">Massachusetts</option>
+                                <option value="MI">Michigan</option>
+                                <option value="MN">Minnesota</option>
+                                <option value="MS">Mississippi</option>
+                                <option value="MO">Missouri</option>
+                                <option value="MT">Montana</option>
+                                <option value="NE">Nebraska</option>
+                                <option value="NV">Nevada</option>
+                                <option value="NH">New Hampshire</option>
+                                <option value="NJ">New Jersey</option>
+                                <option value="NM">New Mexico</option>
+                                <option value="NY">New York</option>
+                                <option value="NC">North Carolina</option>
+                                <option value="ND">North Dakota</option>
+                                <option value="OH">Ohio</option>
+                                <option value="OK">Oklahoma</option>
+                                <option value="OR">Oregon</option>
+                                <option value="PA">Pennsylvania</option>
+                                <option value="PR">Puerto Rico</option>
+                                <option value="RI">Rhode Island</option>
+                                <option value="SC">South Carolina</option>
+                                <option value="SD">South Dakota</option>
+                                <option value="TN">Tennessee</option>
+                                <option value="TX">Texas</option>
+                                <option value="UT">Utah</option>
+                                <option value="VT">Vermont</option>
+                                <option value="VA">Virginia</option>
+                                <option value="WA">Washington</option>
+                                <option value="WV">West Virginia</option>
+                                <option value="WI">Wisconsin</option>
+                                <option value="WY">Wyoming</option>
+                                <!-- Add all US states -->
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="zip">ZIP Code</label>
+                            <input type="text" id="zip" required>
+                        </div>
+                    </div>
+                    <div class="form-group full-width">
+                        <label for="phone">Phone</label>
+                        <input type="tel" id="phone" required>
+                    </div>
+                </div>
+
+                <div class="checkout-summary">
+                    <h3 class="section-title">Order Summary</h3>
+                    <div class="checkout-items" id="checkoutItems">
+                        <!-- Items will be loaded here -->
+                    </div>
+                    <div class="summary-row">
+                        <span>Subtotal</span>
+                        <span id="checkoutSubtotal">$0.00</span>
+                    </div>
+                    <div class="summary-row">
+                        <span>Shipping</span>
+                        <span id="checkoutShipping">Calculated at next step</span>
+                    </div>
+                    <div class="summary-row summary-total">
+                        <span>Total</span>
+                        <span id="checkoutTotal">$0.00</span>
+                    </div>
+                </div>
+
+                <div class="checkout-footer">
+                    <button class="btn-back" id="cancelCheckout">Cancel</button>
+                    <button class="btn-next" id="nextToShipping">Continue to Shipping</button>
+                </div>
+            </div>
+
+            <!-- Step 2: Shipping Method -->
+            <div class="checkout-section" data-step="2">
+                <h3 class="section-title">Shipping Method</h3>
+                <div class="checkout-form">
+                    <div class="form-group full-width">
+                        <label class="shipping-option">
+                            <input type="radio" name="shipping" value="standard" checked>
+                            <div>
+                                <strong>Standard Shipping</strong>
+                                <p>3-5 business days</p>
+                                <p>$5.99</p>
+                            </div>
+                        </label>
+                    </div>
+                    <div class="form-group full-width">
+                        <label class="shipping-option">
+                            <input type="radio" name="shipping" value="express">
+                            <div>
+                                <strong>Express Shipping</strong>
+                                <p>2-3 business days</p>
+                                <p>$12.99</p>
+                            </div>
+                        </label>
+                    </div>
+                    <div class="form-group full-width">
+                        <label class="shipping-option">
+                            <input type="radio" name="shipping" value="overnight">
+                            <div>
+                                <strong>Overnight Shipping</strong>
+                                <p>1 business day</p>
+                                <p>$24.99</p>
+                            </div>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="checkout-summary">
+                    <h3 class="section-title">Order Summary</h3>
+                    <div class="checkout-items" id="checkoutItemsShipping">
+                        <!-- Items will be loaded here -->
+                    </div>
+                    <div class="summary-row">
+                        <span>Subtotal</span>
+                        <span id="checkoutSubtotalShipping">$0.00</span>
+                    </div>
+                    <div class="summary-row">
+                        <span>Shipping</span>
+                        <span id="checkoutShippingCost">$5.99</span>
+                    </div>
+                    <div class="summary-row summary-total">
+                        <span>Total</span>
+                        <span id="checkoutTotalShipping">$0.00</span>
+                    </div>
+                </div>
+
+                <div class="checkout-footer">
+                    <button class="btn-back" id="backToInfo">Back to Information</button>
+                    <button class="btn-next" id="nextToPayment">Continue to Payment</button>
+                </div>
+            </div>
+
+            <!-- Step 3: Payment -->
+            <div class="checkout-section" data-step="3">
+                <h3 class="section-title">Payment Method</h3>
+                <div class="checkout-form">
+                    <div class="form-group full-width">
+                        <label for="card-number">Card Number</label>
+                        <input type="text" id="card-number" placeholder="1234 5678 9012 3456" required>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="card-name">Name on Card</label>
+                            <input type="text" id="card-name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="card-expiry">Expiration Date</label>
+                            <input type="text" id="card-expiry" placeholder="MM/YY" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="card-cvv">Security Code</label>
+                            <input type="text" id="card-cvv" placeholder="CVV" required>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="checkout-summary">
+                    <h3 class="section-title">Order Summary</h3>
+                    <div class="checkout-items" id="checkoutItemsPayment">
+                        <!-- Items will be loaded here -->
+                    </div>
+                    <div class="summary-row">
+                        <span>Subtotal</span>
+                        <span id="checkoutSubtotalPayment">$0.00</span>
+                    </div>
+                    <div class="summary-row">
+                        <span>Shipping</span>
+                        <span id="checkoutShippingPayment">$5.99</span>
+                    </div>
+                    <div class="summary-row summary-total">
+                        <span>Total</span>
+                        <span id="checkoutTotalPayment">$0.00</span>
+                    </div>
+                </div>
+
+                <div class="checkout-footer">
+                    <button class="btn-back" id="backToShipping">Back to Shipping</button>
+                    <button class="btn-next" id="completeOrder">Complete Order</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Success Page -->
+    <div class="success-page" id="successPage">
+        <div class="success-content">
+            <div class="success-icon">
+                <i class="fas fa-check-circle"></i>
+            </div>
+            <h2 class="success-title">Thank You For Your Order!</h2>
+            <p class="success-message">Your order has been received and is being processed. You will receive a confirmation email shortly with your order details.</p>
+            <a href="#shop" class="btn" id="continueShopping">Continue Shopping</a>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mainNav = document.getElementById('mainNav');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mainNav.classList.toggle('active');
+        });
+
+        // Cart Functionality
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+        const cartCount = document.getElementById('cartCount');
+        const cartButton = document.getElementById('cartButton');
+        const cartOverlay = document.getElementById('cartOverlay');
+        const cartSidebar = document.getElementById('cartSidebar');
+        const closeCart = document.getElementById('closeCart');
+        const cartBody = document.getElementById('cartBody');
+        const checkoutButton = document.getElementById('checkoutButton');
+
+        // Initialize cart count
+        updateCartCount();
+
+        // Toggle cart sidebar
+        cartButton.addEventListener('click', (e) => {
+            e.preventDefault();
+            cartOverlay.classList.add('active');
+            cartSidebar.classList.add('active');
+            loadCart();
+        });
+
+        closeCart.addEventListener('click', () => {
+            cartOverlay.classList.remove('active');
+            cartSidebar.classList.remove('active');
+        });
+
+        cartOverlay.addEventListener('click', () => {
+            cartOverlay.classList.remove('active');
+            cartSidebar.classList.remove('active');
+        });
+
+        // Update cart count
+        function updateCartCount() {
+            const count = cart.reduce((total, item) => total + item.quantity, 0);
+            cartCount.textContent = count;
+            localStorage.setItem('cart', JSON.stringify(cart));
+        }
+
+        // Add to cart functionality
+        document.querySelectorAll('.add-to-cart').forEach(button => {
+            button.addEventListener('click', function() {
+                const id = this.dataset.id;
+                const name = this.dataset.name;
+                const price = parseFloat(this.dataset.price);
+                const image = this.dataset.image;
+                
+                const existingItem = cart.find(item => item.id === id);
+                
+                if (existingItem) {
+                    existingItem.quantity += 1;
+                } else {
+                    cart.push({ 
+                        id, 
+                        name, 
+                        price, 
+                        quantity: 1,
+                        image
+                    });
+                }
+                
+                updateCartCount();
+                showNotification(`${name} added to cart!`);
+                
+                // If cart is open, refresh it
+                if (cartSidebar.classList.contains('active')) {
+                    loadCart();
+                }
+            });
+        });
+
+        // Load cart content
+        function loadCart() {
+            if (cart.length === 0) {
+                cartBody.innerHTML = `
+                    <div class="cart-empty">
+                        <p>Your cart is currently empty.</p>
+                        <a href="#shop" class="btn">Continue Shopping</a>
+                    </div>
+                `;
+                document.getElementById('cartSubtotal').textContent = '$0.00';
+                document.getElementById('cartTotal').textContent = '$0.00';
+                checkoutButton.disabled = true;
+                return;
+            }
+
+            checkoutButton.disabled = false;
+            
+            const cartItemsHTML = cart.map(item => `
+                <div class="cart-item" data-id="${item.id}">
+                    <div class="cart-item-image">
+                        <img src="${item.image}" alt="${item.name}">
+                    </div>
+                    <div class="cart-item-details">
+                        <h3>${item.name}</h3>
+                        <p class="cart-item-price">$${item.price.toFixed(2)}</p>
+                        <div class="cart-item-quantity">
+                            <button class="quantity-btn decrease-btn">-</button>
+                            <span>${item.quantity}</span>
+                            <button class="quantity-btn increase-btn">+</button>
+                        </div>
+                        <button class="cart-item-remove">Remove</button>
+                    </div>
+                </div>
+            `).join('');
+            
+            cartBody.innerHTML = cartItemsHTML;
+            
+            // Calculate totals
+            updateCartTotals();
+            
+            // Add event listeners to quantity buttons
+            document.querySelectorAll('.decrease-btn').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const itemId = this.closest('.cart-item').dataset.id;
+                    const item = cart.find(item => item.id === itemId);
+                    
+                    if (item.quantity > 1) {
+                        item.quantity -= 1;
+                    } else {
+                        cart = cart.filter(item => item.id !== itemId);
+                    }
+                    
+                    updateCartCount();
+                    loadCart();
+                });
+            });
+            
+            document.querySelectorAll('.increase-btn').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const itemId = this.closest('.cart-item').dataset.id;
+                    const item = cart.find(item => item.id === itemId);
+                    item.quantity += 1;
+                    updateCartCount();
+                    loadCart();
+                });
+            });
+            
+            document.querySelectorAll('.cart-item-remove').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const itemId = this.closest('.cart-item').dataset.id;
+                    cart = cart.filter(item => item.id !== itemId);
+                    updateCartCount();
+                    loadCart();
+                });
+            });
+        }
+
+        // Update cart totals
+        function updateCartTotals() {
+            const subtotal = cart.reduce((total, item) => total + (item.price * item.quantity), 0);
+            document.getElementById('cartSubtotal').textContent = `$${subtotal.toFixed(2)}`;
+            document.getElementById('cartTotal').textContent = `$${subtotal.toFixed(2)}`;
+        }
+
+        // Show notification
+        function showNotification(message) {
+            const notification = document.createElement('div');
+            notification.style.position = 'fixed';
+            notification.style.bottom = '20px';
+            notification.style.right = '20px';
+            notification.style.backgroundColor = 'var(--accent-color)';
+            notification.style.color = 'white';
+            notification.style.padding = '12px 24px';
+            notification.style.borderRadius = '4px';
+            notification.style.boxShadow = '0 4px 12px rgba(0,0,0,0.15)';
+            notification.style.zIndex = '1000';
+            notification.style.fontWeight = '500';
+            notification.textContent = message;
+            
+            document.body.appendChild(notification);
+            
+            setTimeout(() => {
+                notification.style.opacity = '0';
+                notification.style.transition = 'opacity 0.5s ease';
+                setTimeout(() => {
+                    document.body.removeChild(notification);
+                }, 500);
+            }, 3000);
+        }
+
+        // Checkout functionality
+        const checkoutPage = document.getElementById('checkoutPage');
+        const backToCart = document.getElementById('backToCart');
+        const cancelCheckout = document.getElementById('cancelCheckout');
+        const nextToShipping = document.getElementById('nextToShipping');
+        const backToInfo = document.getElementById('backToInfo');
+        const nextToPayment = document.getElementById('nextToPayment');
+        const backToShipping = document.getElementById('backToShipping');
+        const completeOrder = document.getElementById('completeOrder');
+        const continueShopping = document.getElementById('continueShopping');
+
+        // Open checkout from cart
+        checkoutButton.addEventListener('click', () => {
+            cartOverlay.classList.remove('active');
+            cartSidebar.classList.remove('active');
+            checkoutPage.classList.add('active');
+            loadCheckoutStep(1);
+        });
+
+        // Back to cart from checkout
+        backToCart.addEventListener('click', () => {
+            checkoutPage.classList.remove('active');
+            cartOverlay.classList.add('active');
+            cartSidebar.classList.add('active');
+        });
+
+        // Cancel checkout
+        cancelCheckout.addEventListener('click', () => {
+            checkoutPage.classList.remove('active');
+        });
+
+        // Navigation between checkout steps
+        nextToShipping.addEventListener('click', () => {
+            // Validate step 1
+            if (!validateCheckoutStep(1)) {
+                showNotification('Please fill out all required fields');
+                return;
+            }
+            loadCheckoutStep(2);
+        });
+
+        backToInfo.addEventListener('click', () => {
+            loadCheckoutStep(1);
+        });
+
+        nextToPayment.addEventListener('click', () => {
+            // Validate step 2
+            if (!document.querySelector('input[name="shipping"]:checked')) {
+                showNotification('Please select a shipping method');
+                return;
+            }
+            loadCheckoutStep(3);
+        });
+
+        backToShipping.addEventListener('click', () => {
+            loadCheckoutStep(2);
+        });
+
+        // Complete order
+        completeOrder.addEventListener('click', (e) => {
+            e.preventDefault();
+            
+            // Validate payment
+            if (!validateCheckoutStep(3)) {
+                showNotification('Please fill out all payment details');
+                return;
+            }
+            
+            // Process order (in a real app, this would be sent to a server)
+            cart = [];
+            updateCartCount();
+            localStorage.setItem('cart', JSON.stringify(cart));
+            
+            // Show success page
+            checkoutPage.classList.remove('active');
+            document.getElementById('successPage').classList.add('active');
+        });
+
+        // Continue shopping from success page
+        continueShopping.addEventListener('click', () => {
+            document.getElementById('successPage').classList.remove('active');
+        });
+
+        // Load checkout step
+        function loadCheckoutStep(step) {
+            // Update steps UI
+            document.querySelectorAll('.step').forEach(stepEl => {
+                stepEl.classList.remove('active');
+                if (parseInt(stepEl.dataset.step) <= step) {
+                    stepEl.classList.add('active');
+                }
+            });
+            
+            // Show correct section
+            document.querySelectorAll('.checkout-section').forEach(section => {
+                section.classList.remove('active');
+                if (section.dataset.step === step.toString()) {
+                    section.classList.add('active');
+                }
+            });
+            
+            // Load order summary for each step
+            loadOrderSummary(step);
+        }
+
+        // Validate checkout step
+        function validateCheckoutStep(step) {
+            if (step === 1) {
+                const requiredFields = [
+                    'checkout-email', 'first-name', 'last-name', 
+                    'address', 'city', 'country', 'state', 'zip', 'phone'
+                ];
+                
+                for (const fieldId of requiredFields) {
+                    const field = document.getElementById(fieldId);
+                    if (!field.value.trim()) {
+                        return false;
+                    }
+                }
+                
+                return true;
+            }
+            
+            if (step === 3) {
+                const requiredFields = [
+                    'card-number', 'card-name', 'card-expiry', 'card-cvv'
+                ];
+                
+                for (const fieldId of requiredFields) {
+                    const field = document.getElementById(fieldId);
+                    if (!field.value.trim()) {
+                        return false;
+                    }
+                }
+                
+                return true;
+            }
+            
+            return true;
+        }
+
+        // Load order summary for checkout steps
+        function loadOrderSummary(step) {
+            const subtotal = cart.reduce((total, item) => total + (item.price * item.quantity), 0);
+            let shipping = 0;
+            
+            // Get selected shipping method
+            const shippingMethod = document.querySelector('input[name="shipping"]:checked');
+            if (shippingMethod) {
+                switch (shippingMethod.value) {
+                    case 'standard':
+                        shipping = 5.99;
+                        break;
+                    case 'express':
+                        shipping = 12.99;
+                        break;
+                    case 'overnight':
+                        shipping = 24.99;
+                        break;
+                }
+            }
+            
+            const total = subtotal + shipping;
+            
+            // Update summary for all steps
+            const checkoutItemsHTML = cart.map(item => `
+                <div class="checkout-item">
+                    <div class="checkout-item-info">
+                        <div class="checkout-item-image">
+                            <img src="${item.image}" alt="${item.name}">
+                        </div>
+                        <div class="checkout-item-details">
+                            <h4>${item.name}</h4>
+                            <p>Qty: ${item.quantity}</p>
+                        </div>
+                    </div>
+                    <div class="checkout-item-price">
+                        $${(item.price * item.quantity).toFixed(2)}
+                    </div>
+                </div>
+            `).join('');
+            
+            // Update step 1 summary
+            document.getElementById('checkoutItems').innerHTML = checkoutItemsHTML;
+            document.getElementById('checkoutSubtotal').textContent = `$${subtotal.toFixed(2)}`;
+            document.getElementById('checkoutTotal').textContent = `$${subtotal.toFixed(2)}`;
+            
+            // Update step 2 summary
+            document.getElementById('checkoutItemsShipping').innerHTML = checkoutItemsHTML;
+            document.getElementById('checkoutSubtotalShipping').textContent = `$${subtotal.toFixed(2)}`;
+            document.getElementById('checkoutShippingCost').textContent = `$${shipping.toFixed(2)}`;
+            document.getElementById('checkoutTotalShipping').textContent = `$${total.toFixed(2)}`;
+            
+            // Update step 3 summary
+            document.getElementById('checkoutItemsPayment').innerHTML = checkoutItemsHTML;
+            document.getElementById('checkoutSubtotalPayment').textContent = `$${subtotal.toFixed(2)}`;
+            document.getElementById('checkoutShippingPayment').textContent = `$${shipping.toFixed(2)}`;
+            document.getElementById('checkoutTotalPayment').textContent = `$${total.toFixed(2)}`;
+        }
+
+        // Page Routing
+        function loadPage(page) {
+            // Hide all pages
+            document.querySelectorAll('.page').forEach(p => {
+                p.classList.remove('active');
+            });
+
+            // Show selected page
+            const pageElement = document.getElementById(`${page}-page`);
+            if (pageElement) {
+                pageElement.classList.add('active');
+            }
+
+            // Update active nav link
+            document.querySelectorAll('.nav-link').forEach(link => {
+                link.classList.remove('active');
+                if (link.dataset.page === page) {
+                    link.classList.add('active');
+                }
+            });
+
+            // Scroll to top
+            window.scrollTo(0, 0);
+        }
+
+        // Handle navigation
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', function(e) {
+                if (this.dataset.page === 'cart') {
+                    e.preventDefault();
+                    cartOverlay.classList.add('active');
+                    cartSidebar.classList.add('active');
+                    loadCart();
+                    return;
+                }
+                
+                e.preventDefault();
+                const page = this.dataset.page;
+                window.location.hash = page;
+                loadPage(page);
+            });
+        });
+
+        // Handle contact form
+        document.getElementById('contactForm')?.addEventListener('submit', function(e) {
+            e.preventDefault();
+            showNotification('Thank you for your message! This is a demo site, so your message wasn\'t actually sent.');
+            this.reset();
+        });
+
+        // Initialize page based on hash
+        function initPage() {
+            const hash = window.location.hash.substring(1) || 'home';
+            loadPage(hash);
+        }
+
+        // Handle hash changes
+        window.addEventListener('hashchange', initPage);
+
+        // Initialize on load
+        document.addEventListener('DOMContentLoaded', function() {
+            initPage();
+            updateCartCount();
+            
+            // Setup cart buttons
+            document.querySelectorAll('.add-to-cart').forEach(button => {
+                button.addEventListener('click', function() {
+                    const id = this.dataset.id;
+                    const name = this.dataset.name;
+                    const price = parseFloat(this.dataset.price);
+                    const image = this.dataset.image;
+                    
+                    const existingItem = cart.find(item => item.id === id);
+                    
+                    if (existingItem) {
+                        existingItem.quantity += 1;
+                    } else {
+                        cart.push({ 
+                            id, 
+                            name, 
+                            price, 
+                            quantity: 1,
+                            image
+                        });
+                    }
+                    
+                    updateCartCount();
+                    showNotification(`${name} added to cart!`);
+                    
+                    // If cart is open, refresh it
+                    if (cartSidebar.classList.contains('active')) {
+                        loadCart();
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
